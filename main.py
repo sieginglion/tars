@@ -21,7 +21,7 @@ def main(req):
                     closes.append(float(line[4]))
             if symbol == "2002.TW":
                 if closes[-1] >= 22:
-                    r.post(bot_api + "/sendMessage", json={"chat_id": 1075192674, "text": f"{symbol} reached {closes[-1]}%"})
+                    r.post(bot_api + "/sendMessage", json={"chat_id": 1075192674, "text": f"{symbol} reached {closes[-1]}"})
             else:
                 drop = 1 - closes[-1] / closes[-2]
                 if drop > 0.025:
